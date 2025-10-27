@@ -1,0 +1,14 @@
+com\example\dms_project_phase_3_real\BackpackService.class
+com\example\dms_project_phase_3_real\RunescapeItem.class
+com\example\dms_project_phase_3_real\CliController.class
+com\example\dms_project_phase_3_real\ItemRepository.class
+com\example\dms_project_phase_3_real\Main.class
+com\example\dms_project_phase_3_real\ItemQty.class
+com\example\dms_project_phase_3_real\TextFileAdapter.class
+com\example\dms_project_phase_3_real\ItemType.class
+com\example\dms_project_phase_3_real\MainApp.class
+com\example\dms_project_phase_3_real\AppController.class
+com\example\dms_project_phase_3_real\BackpackSummary.class
+com\example\dms_project_phase_3_real\TextFileAdapter$LoadResult.class
+com\example\dms_project_phase_3_real\ItemRepository$ItemUpdater.class
+com\example\dms_project_phase_3_real\ValidationException.class

@@ -1,0 +1,96 @@
+/**
+ * David Alfonsi
+ * CEN 3024C - Software Development 1
+ * October 24th, 2025
+ * theme.css
+ * This Stylesheet contains the rules and color themes for the MainApp GUI.
+ * Simple brown/tan Runescape-inspired palette.
+ * Keeps contrast high for readability.
+ */
+
+.root {
+    -fx-base: #3b2d1f;
+    -fx-background: #3b2d1f;
+    -fx-accent: #cda974;
+    -fx-focus-color: #cda974;
+    -fx-faint-focus-color: rgba(205,169,116,0.2);
+    -fx-text-fill: #efe7da;
+}
+
+#topBar {
+    -fx-background-color: linear-gradient(#5a452f, #3b2d1f);
+}
+
+.title {
+    -fx-text-fill: #efe7da;
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+}
+
+.sidePanel {
+    -fx-background-color: #cdb38b;
+    -fx-background-radius: 10;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 12, 0, 0, 2);
+}
+
+.panelTitle {
+    -fx-text-fill: #2b2218;
+    -fx-font-weight: bold;
+    -fx-font-size: 15px;
+}
+
+.table-view {
+    -fx-background-color: #4a3826;
+    -fx-border-color: #2b2218;
+}
+
+.combo-box, .combo-box .list-cell {
+    -fx-text-fill: #3b2e1d;
+    -fx-font-weight: bold;
+}
+
+.combo-box-base {
+    -fx-background-color: #d9b88f;
+    -fx-border-color: #8b6a46;
+    -fx-border-radius: 4;
+    -fx-background-radius: 4;
+}
+
+.table-view .column-header-background {
+    -fx-background-color: #58422d;
+}
+
+.table-view .table-row-cell {
+    -fx-text-fill: #efe7da;
+}
+
+.button {
+    -fx-background-color: #6e5438;
+    -fx-text-fill: #efe7da;
+    -fx-background-radius: 8;
+    -fx-font-weight: bold;
+}
+.button:hover {
+    -fx-background-color: #846547;
+}
+
+.text-field, .combo-box {
+    -fx-background-color: #fff8ee;
+    -fx-text-fill: #2b2218;
+    -fx-background-radius: 6;
+}
+
+.status {
+    -fx-text-fill: #2b2218;
+    -fx-background-color: rgba(255,255,255,0.6);
+    -fx-padding: 8;
+    -fx-background-radius: 6;
+}
+
+#statusBar {
+    -fx-padding: 6 10 6 10;
+    -fx-background-color: #2b2218;
+}
+#statusBar .label {
+    -fx-text-fill: #efe7da;
+}

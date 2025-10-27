@@ -1,0 +1,3 @@
+Manifest-Version: 1.0
+Main-Class: com.example.dms_project_phase_3_real.MainApp
+

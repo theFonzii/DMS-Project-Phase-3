@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ * David Alfonsi
+ * CEN 3024C - Software Development 1
+ * October 24th, 2025
+ * app.fxml
+ * Single-screen GUI implementing Menu, Tables, Forms.
+ * Controller populates column cell factories and button logic.
+-->
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.cell.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.dms_project_phase_3_real.AppController" stylesheets="@theme.css">
+
+    <!-- Top: Toolbar acts as the "menu" -->
+    <top>
+        <ToolBar id="topBar">
+            <Label text="Runescape Item DMS" styleClass="title"/>
+            <Pane HBox.hgrow="ALWAYS"/>
+            <Button fx:id="btnLoadCsv" text="Load CSV" onAction="#onLoadCsv"/>
+            <Button fx:id="btnBackpack" text="Backpack" onAction="#onBackpack"/>
+            <Button fx:id="btnExit" text="Exit" onAction="#onExit"/>
+        </ToolBar>
+    </top>
+
+    <!-- Center: Table of items -->
+    <center>
+        <TableView fx:id="table" prefHeight="400.0" prefWidth="650.0">
+            <columns>
+                <TableColumn fx:id="idCol" text="ID" prefWidth="70"/>
+                <TableColumn fx:id="nameCol" text="Name" prefWidth="180"/>
+                <TableColumn fx:id="typeCol" text="Type" prefWidth="110"/>
+                <TableColumn fx:id="levelCol" text="Level" prefWidth="70"/>
+                <TableColumn fx:id="weightCol" text="Weight (kg)" prefWidth="110"/>
+                <TableColumn fx:id="priceCol" text="GE Price" prefWidth="110"/>
+            </columns>
+        </TableView>
+    </center>
+
+    <!-- Right: Form for CRUD -->
+    <right>
+        <VBox spacing="8" prefWidth="360" styleClass="sidePanel">
+            <padding><Insets top="12" right="12" bottom="12" left="12"/></padding>
+            <Label text="Item Editor" styleClass="panelTitle"/>
+
+            <GridPane hgap="8" vgap="8">
+                <columnConstraints>
+                    <ColumnConstraints halignment="RIGHT" minWidth="90"/>
+                    <ColumnConstraints hgrow="ALWAYS"/>
+                </columnConstraints>
+
+                <children>
+                    <Label text="ID:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                    <TextField fx:id="idField" promptText="e.g., 1001"
+                               GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+                    <Label text="Name:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+                    <TextField fx:id="nameField" promptText="Rune Scimitar"
+                               GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+                    <Label text="Type:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+                    <ComboBox fx:id="typeBox" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+                    <Label text="Req. Level:" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+                    <TextField fx:id="levelField" promptText=">= 0"
+                               GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+
+                    <Label text="Weight (kg):" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+                    <TextField fx:id="weightField" promptText=">= 0.0"
+                               GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+
+                    <Label text="GE Price:" GridPane.rowIndex="5" GridPane.columnIndex="0"/>
+                    <TextField fx:id="priceField" promptText=">= 0"
+                               GridPane.rowIndex="5" GridPane.columnIndex="1"/>
+                </children>
+            </GridPane>
+
+            <HBox spacing="8">
+                <Button fx:id="btnAdd" text="Add" onAction="#onAdd" HBox.hgrow="ALWAYS"/>
+                <Button fx:id="btnUpdate" text="Update Selected" onAction="#onUpdateSelected" HBox.hgrow="ALWAYS"/>
+                <Button fx:id="btnDelete" text="Delete Selected" onAction="#onDeleteSelected" HBox.hgrow="ALWAYS"/>
+            </HBox>
+
+            <Label fx:id="status" text="Ready." wrapText="true" styleClass="status"/>
+        </VBox>
+    </right>
+
+    <!-- Bottom: small status bar (duplicated with label for emphasis) -->
+    <bottom>
+        <HBox id="statusBar">
+            <Label text="Phase 3 — GUI only (no DB)"/>
+        </HBox>
+    </bottom>
+</BorderPane>
